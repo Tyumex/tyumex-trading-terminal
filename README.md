@@ -1,6 +1,6 @@
 # Tyumex Terminal
 
-Windows desktop trading terminal for multi-chart market analysis. One workspace holds several independent chart panes, each on its own data source: Binance Spot, Binance USD-M Futures, an exchange data API for CME and MOEX instruments, and local MetaTrader 5 terminals. Orders are sent to MT5 directly from the chart.
+Windows desktop multi-chart trading terminal for Binance and MetaTrader 5 (MT5), with tick-built 20–45-second charts, technical analysis and risk-based chart trading. One workspace holds several independent chart panes, each on its own data source: Binance Spot, Binance USD-M Futures, an exchange data API for CME and MOEX instruments, and local MetaTrader 5 terminals. Orders are sent to MT5 directly from the chart.
 
 This repository publishes the **Standard Edition** installer, screenshots and setup notes. Application sources are not part of the public package.
 
@@ -12,9 +12,9 @@ This repository publishes the **Standard Edition** installer, screenshots and se
 
 | | |
 |---|---|
-| Version | **1.0.65** |
-| Package | `TyumexTerminalStandardSetup-1.0.65.exe` |
-| SHA-256 | `19A021F9CA6132E3BAF39B2AF063B894C81E832DAE2760F6E3218F2142C7D146` |
+| Version | **1.0.91** |
+| Package | `TyumexTerminalStandardSetup-1.0.91.exe` |
+| SHA-256 | `DFFFE30E2B3F6FCA94D6C5FE47B86E8903A430B03EDBC3546F724AE6EC11CAB5` |
 | Platform | Windows 10 / 11, 64-bit |
 
 **[Download the latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest)**
@@ -22,7 +22,7 @@ This repository publishes the **Standard Edition** installer, screenshots and se
 Verify the download before running it:
 
 ```powershell
-Get-FileHash .\TyumexTerminalStandardSetup-1.0.65.exe -Algorithm SHA256
+Get-FileHash .\TyumexTerminalStandardSetup-1.0.91.exe -Algorithm SHA256
 ```
 
 The printed hash must match the SHA-256 above. If it does not, do not run the file.
@@ -61,7 +61,7 @@ Codes are issued for 28 days by the official Telegram bot and are never publishe
 
 ## Installation
 
-1. Download `TyumexTerminalStandardSetup-1.0.65.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
+1. Download `TyumexTerminalStandardSetup-1.0.91.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
 2. Run the installer. It creates a desktop shortcut and installs into `%LOCALAPPDATA%\Programs\Tyumex Terminal`, isolated from other Tyumex installations.
 3. Start **Tyumex Terminal Standard**.
 4. For Binance and exchange API charts, pick the source and symbol in the chart header. Nothing else is required.
