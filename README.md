@@ -1,20 +1,34 @@
 # Tyumex Terminal
 
-Windows desktop trading terminal for multi-chart market analysis. One workspace holds several independent chart panes, each on its own data source: Binance Spot, Binance USD-M Futures, an exchange data API for CME and MOEX instruments, and local MetaTrader 5 terminals. Orders are sent to MT5 directly from the chart.
+**A Windows multi-chart terminal for scalping Binance, CME/MOEX and MetaTrader 5 — with native 20–45 second candles and risk-based MT5 trading directly from the chart.**
+
+Build one workspace from independent chart panes, each with its own market, symbol and timeframe. Follow crypto, futures and broker instruments side by side, then place and manage MT5 orders without leaving the chart.
 
 This repository publishes the **Standard Edition** installer, screenshots and setup notes. Application sources are not part of the public package.
 
 [Русская версия -> README.ru.md](README.ru.md)
 
-![Tyumex Terminal overview](docs/terminal-overview.png)
+**[Download Standard](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest)** · **[Watch the video](https://youtu.be/f25thMErcQ0?si=yG94mQExcZvv0zO-)** · **[Get access / Support](https://t.me/Tyumex_bot)**
+
+[![Tyumex Terminal multi-chart workspace](docs/tyumex-terminal-multichart.png)](https://youtu.be/f25thMErcQ0?si=yG94mQExcZvv0zO-)
+
+*Click the screenshot to watch Tyumex Terminal in action.*
+
+## Why Tyumex
+
+- **Real multi-market workspace** — combine Binance Spot, Binance USD-M Futures, CME/MOEX market data and local MT5 terminals on one screen.
+- **Native sub-minute charts** — 20s, 30s and 45s candles are built from ticks instead of approximated from one-minute bars.
+- **Chart-based MT5 execution** — place market or pending orders, set SL/TP before entry, drag pending orders and partially or fully close positions from the chart.
+- **Risk-first order sizing** — use fixed volume or calculate position size from the risk selected for the trade.
+- **Local by design** — broker credentials, account details and terminal paths stay on your computer; secrets are encrypted with Windows DPAPI.
 
 ## Download
 
 | | |
 |---|---|
-| Version | **1.0.65** |
-| Package | `TyumexTerminalStandardSetup-1.0.65.exe` |
-| SHA-256 | `19A021F9CA6132E3BAF39B2AF063B894C81E832DAE2760F6E3218F2142C7D146` |
+| Version | **1.0.91 Standard** |
+| Package | `TyumexTerminalStandardSetup-1.0.91.exe` |
+| SHA-256 | `DFFFE30E2B3F6FCA94D6C5FE47B86E8903A430B03EDBC3546F724AE6EC11CAB5` |
 | Platform | Windows 10 / 11, 64-bit |
 
 **[Download the latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest)**
@@ -22,7 +36,7 @@ This repository publishes the **Standard Edition** installer, screenshots and se
 Verify the download before running it:
 
 ```powershell
-Get-FileHash .\TyumexTerminalStandardSetup-1.0.65.exe -Algorithm SHA256
+Get-FileHash .\TyumexTerminalStandardSetup-1.0.91.exe -Algorithm SHA256
 ```
 
 The printed hash must match the SHA-256 above. If it does not, do not run the file.
@@ -61,7 +75,7 @@ Codes are issued for 28 days by the official Telegram bot and are never publishe
 
 ## Installation
 
-1. Download `TyumexTerminalStandardSetup-1.0.65.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
+1. Download `TyumexTerminalStandardSetup-1.0.91.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
 2. Run the installer. It creates a desktop shortcut and installs into `%LOCALAPPDATA%\Programs\Tyumex Terminal`, isolated from other Tyumex installations.
 3. Start **Tyumex Terminal Standard**.
 4. For Binance and exchange API charts, pick the source and symbol in the chart header. Nothing else is required.

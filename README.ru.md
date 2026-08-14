@@ -1,20 +1,34 @@
 # Tyumex Terminal
 
-Торговый терминал для Windows: анализ рынка на нескольких графиках одновременно. В одном рабочем пространстве живут независимые панели, каждая на своём источнике данных: Binance Spot, Binance USD-M Futures, биржевой API для инструментов CME и MOEX, локальные терминалы MetaTrader 5. Заявки уходят в MT5 прямо с графика.
+**Мультиграфический терминал для скальпинга на Windows: Binance, CME/MOEX и MetaTrader 5, секундные свечи 20–45с и управление MT5-сделками непосредственно с графика.**
+
+Соберите одно рабочее пространство из независимых графиков — со своим рынком, символом и таймфреймом в каждой панели. Следите одновременно за криптовалютами, фьючерсами и инструментами брокера, а затем открывайте и сопровождайте MT5-сделки, не покидая график.
 
 В этом репозитории публикуются установщик **стандартной версии**, скриншоты и инструкция. Исходный код в публичный пакет не входит.
 
 [English version -> README.md](README.md)
 
-![Обзор Tyumex Terminal](docs/terminal-overview.png)
+**[Скачать Standard](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest)** · **[Посмотреть видео](https://youtu.be/f25thMErcQ0?si=yG94mQExcZvv0zO-)** · **[Получить доступ / Поддержка](https://t.me/Tyumex_bot)**
+
+[![Мультиграфическое рабочее пространство Tyumex Terminal](docs/tyumex-terminal-multichart.png)](https://youtu.be/f25thMErcQ0?si=yG94mQExcZvv0zO-)
+
+*Нажмите на скриншот, чтобы посмотреть Tyumex Terminal в работе.*
+
+## Почему Tyumex
+
+- **Несколько рынков в одном пространстве** — Binance Spot, Binance USD-M Futures, данные CME/MOEX и локальные терминалы MT5 можно разместить на одном экране.
+- **Настоящие секундные графики** — свечи 20с, 30с и 45с строятся из тиков, а не имитируются из минутных свечей.
+- **Торговля через MT5 с графика** — рыночные и отложенные заявки, SL/TP до входа, перетаскивание заявки, частичное и полное закрытие позиции.
+- **Расчёт объёма от риска** — можно задать фиксированный объём или рассчитать позицию по выбранному риску на сделку.
+- **Локальная и защищённая работа** — данные брокера, номера счетов и пути к терминалам остаются на компьютере, а секреты шифруются через Windows DPAPI.
 
 ## Скачать
 
 | | |
 |---|---|
-| Версия | **1.0.65** |
-| Файл | `TyumexTerminalStandardSetup-1.0.65.exe` |
-| SHA-256 | `19A021F9CA6132E3BAF39B2AF063B894C81E832DAE2760F6E3218F2142C7D146` |
+| Версия | **1.0.91 Standard** |
+| Файл | `TyumexTerminalStandardSetup-1.0.91.exe` |
+| SHA-256 | `DFFFE30E2B3F6FCA94D6C5FE47B86E8903A430B03EDBC3546F724AE6EC11CAB5` |
 | Платформа | Windows 10 / 11, 64-бит |
 
 **[Скачать последний релиз](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest)**
@@ -22,7 +36,7 @@
 Перед запуском проверьте файл:
 
 ```powershell
-Get-FileHash .\TyumexTerminalStandardSetup-1.0.65.exe -Algorithm SHA256
+Get-FileHash .\TyumexTerminalStandardSetup-1.0.91.exe -Algorithm SHA256
 ```
 
 Выведенный хеш должен совпасть с SHA-256 выше. Если не совпадает, файл запускать нельзя.
@@ -61,7 +75,7 @@ Get-FileHash .\TyumexTerminalStandardSetup-1.0.65.exe -Algorithm SHA256
 
 ## Установка
 
-1. Скачайте `TyumexTerminalStandardSetup-1.0.65.exe` из [последнего релиза](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) и проверьте SHA-256.
+1. Скачайте `TyumexTerminalStandardSetup-1.0.91.exe` из [последнего релиза](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) и проверьте SHA-256.
 2. Запустите установщик. Он создаст ярлык на рабочем столе и поставит терминал в `%LOCALAPPDATA%\Programs\Tyumex Terminal` отдельно от других редакций Tyumex.
 3. Запустите **Tyumex Terminal Standard**.
 4. Для Binance и биржевого API выберите источник и символ в шапке графика. Больше ничего не нужно.
