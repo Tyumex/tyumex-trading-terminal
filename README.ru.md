@@ -1,6 +1,6 @@
 # Tyumex Terminal
 
-Торговый терминал для Windows: анализ рынка на нескольких графиках одновременно. В одном рабочем пространстве живут независимые панели, каждая на своём источнике данных: Binance Spot, Binance USD-M Futures, биржевой API для инструментов CME и MOEX, локальные терминалы MetaTrader 5. Заявки уходят в MT5 прямо с графика.
+Торговый терминал для Windows с несколькими графиками, данными Binance и MetaTrader 5 (MT5), секундными свечами 20–45 секунд, техническим анализом и торговлей с графика по заданному риску. В одном рабочем пространстве живут независимые панели, каждая на своём источнике данных: Binance Spot, Binance USD-M Futures, биржевой API для инструментов CME и MOEX, локальные терминалы MetaTrader 5. Заявки уходят в MT5 прямо с графика.
 
 В этом репозитории публикуются установщик **стандартной версии**, скриншоты и инструкция. Исходный код в публичный пакет не входит.
 
@@ -12,9 +12,9 @@
 
 | | |
 |---|---|
-| Версия | **1.0.65** |
-| Файл | `TyumexTerminalStandardSetup-1.0.65.exe` |
-| SHA-256 | `19A021F9CA6132E3BAF39B2AF063B894C81E832DAE2760F6E3218F2142C7D146` |
+| Версия | **1.0.91** |
+| Файл | `TyumexTerminalStandardSetup-1.0.91.exe` |
+| SHA-256 | `DFFFE30E2B3F6FCA94D6C5FE47B86E8903A430B03EDBC3546F724AE6EC11CAB5` |
 | Платформа | Windows 10 / 11, 64-бит |
 
 **[Скачать последний релиз](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest)**
@@ -22,7 +22,7 @@
 Перед запуском проверьте файл:
 
 ```powershell
-Get-FileHash .\TyumexTerminalStandardSetup-1.0.65.exe -Algorithm SHA256
+Get-FileHash .\TyumexTerminalStandardSetup-1.0.91.exe -Algorithm SHA256
 ```
 
 Выведенный хеш должен совпасть с SHA-256 выше. Если не совпадает, файл запускать нельзя.
@@ -61,7 +61,7 @@ Get-FileHash .\TyumexTerminalStandardSetup-1.0.65.exe -Algorithm SHA256
 
 ## Установка
 
-1. Скачайте `TyumexTerminalStandardSetup-1.0.65.exe` из [последнего релиза](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) и проверьте SHA-256.
+1. Скачайте `TyumexTerminalStandardSetup-1.0.91.exe` из [последнего релиза](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) и проверьте SHA-256.
 2. Запустите установщик. Он создаст ярлык на рабочем столе и поставит терминал в `%LOCALAPPDATA%\Programs\Tyumex Terminal` отдельно от других редакций Tyumex.
 3. Запустите **Tyumex Terminal Standard**.
 4. Для Binance и биржевого API выберите источник и символ в шапке графика. Больше ничего не нужно.
