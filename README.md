@@ -22,6 +22,8 @@ This repository publishes the **Standard Edition** installer, screenshots and se
 - **Risk-first order sizing** — use fixed volume or calculate position size from the risk selected for the trade.
 - **Local by design** — broker credentials, account details and terminal paths stay on your computer; secrets are encrypted with Windows DPAPI.
 
+Unlike the usual MT5 Expert Advisors, in-terminal panels and monitoring dashboards, Tyumex is a separate multi-chart Windows terminal that uses your locally installed MetaTrader 5 for market data and real order execution. Among publicly discoverable GitHub projects, this combination of an independent workspace, multiple local MT5 connections and manual chart-based trading is exceptionally rare.
+
 ## Download
 
 | | |
