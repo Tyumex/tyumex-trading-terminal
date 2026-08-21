@@ -12,9 +12,9 @@ This repository publishes the installer, screenshots and setup notes. Applicatio
 
 | | |
 |---|---|
-| Version | **1.0.99** |
-| Package | `TyumexTerminalNextSetup-1.0.99.exe` |
-| SHA-256 | `F45C0137203AD49ECCEFFA50AC8ABFE8DD4054B39FA9A6F0646E235915F5F3FF` |
+| Version | **1.0.109** |
+| Package | `TyumexTerminalNextSetup-1.0.109.exe` |
+| SHA-256 | `A9DA9A76A243063C414BE5A954581A86135A00ED95990DC87BAD6A3B23EA60D8` |
 | Platform | Windows 10 / 11, 64-bit |
 
 **[Download the latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest)**
@@ -22,7 +22,7 @@ This repository publishes the installer, screenshots and setup notes. Applicatio
 Verify the download before running it:
 
 ```powershell
-Get-FileHash .\TyumexTerminalNextSetup-1.0.99.exe -Algorithm SHA256
+Get-FileHash .\TyumexTerminalNextSetup-1.0.109.exe -Algorithm SHA256
 ```
 
 The printed hash must match the SHA-256 above. If it does not, do not run the file.
@@ -80,7 +80,7 @@ The mode is re-checked every ten minutes. If a check cannot be completed, the te
 
 ## Installation
 
-1. Download `TyumexTerminalNextSetup-1.0.99.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
+1. Download `TyumexTerminalNextSetup-1.0.109.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
 2. Run the installer. It installs into `%LOCALAPPDATA%\Programs\Tyumex Terminal Next` and creates a desktop shortcut, isolated from other Tyumex installations.
 3. Start **Tyumex Terminal Next**.
 4. For Binance, Hyperliquid and exchange API charts, pick the source and symbol in the chart header. Nothing else is required.
