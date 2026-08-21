@@ -12,9 +12,9 @@
 
 | | |
 |---|---|
-| Версия | **1.0.99** |
-| Файл | `TyumexTerminalNextSetup-1.0.99.exe` |
-| SHA-256 | `F45C0137203AD49ECCEFFA50AC8ABFE8DD4054B39FA9A6F0646E235915F5F3FF` |
+| Версия | **1.0.109** |
+| Файл | `TyumexTerminalNextSetup-1.0.109.exe` |
+| SHA-256 | `A9DA9A76A243063C414BE5A954581A86135A00ED95990DC87BAD6A3B23EA60D8` |
 | Платформа | Windows 10 / 11, 64-бит |
 
 **[Скачать последний релиз](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest)**
@@ -22,7 +22,7 @@
 Перед запуском проверьте файл:
 
 ```powershell
-Get-FileHash .\TyumexTerminalNextSetup-1.0.99.exe -Algorithm SHA256
+Get-FileHash .\TyumexTerminalNextSetup-1.0.109.exe -Algorithm SHA256
 ```
 
 Выведенный хеш должен совпасть с SHA-256 выше. Если не совпадает, файл запускать нельзя.
@@ -80,7 +80,7 @@ Get-FileHash .\TyumexTerminalNextSetup-1.0.99.exe -Algorithm SHA256
 
 ## Установка
 
-1. Скачайте `TyumexTerminalNextSetup-1.0.99.exe` из [последнего релиза](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) и проверьте SHA-256.
+1. Скачайте `TyumexTerminalNextSetup-1.0.109.exe` из [последнего релиза](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) и проверьте SHA-256.
 2. Запустите установщик. Он поставит терминал в `%LOCALAPPDATA%\Programs\Tyumex Terminal Next` и создаст ярлык на рабочем столе, отдельно от других установок Tyumex.
 3. Запустите **Tyumex Terminal Next**.
 4. Для Binance, Hyperliquid и биржевого API выберите источник и символ в шапке графика. Больше ничего не нужно.
