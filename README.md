@@ -12,9 +12,9 @@ This repository publishes the installer, screenshots and setup notes. Applicatio
 
 | | |
 |---|---|
-| Version | **1.0.112** |
-| Package | `TyumexTerminalNextSetup-1.0.112.exe` |
-| SHA-256 | `67AAA0818D6C8152856E2FBCC43EAC62AA721CE757B2B5975F2E1F67444D1120` |
+| Version | **1.0.114** |
+| Package | `TyumexTerminalNextSetup-1.0.114.exe` |
+| SHA-256 | `AA21442F09FB9D0F1F6A169A5756408DD61ECAB2411D2A698098CED98BC819AA` |
 | Platform | Windows 10 / 11, 64-bit |
 
 **[Download the latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest)**
@@ -22,12 +22,12 @@ This repository publishes the installer, screenshots and setup notes. Applicatio
 Verify the download before running it:
 
 ```powershell
-Get-FileHash .\TyumexTerminalNextSetup-1.0.112.exe -Algorithm SHA256
+Get-FileHash .\TyumexTerminalNextSetup-1.0.114.exe -Algorithm SHA256
 ```
 
 The printed hash must match the SHA-256 above. If it does not, do not run the file.
 
-This build adds MetaTrader 4 next to MetaTrader 5: an MT4 slot charts and trades under the same rules, risk sizing and license checks as an MT5 one. It also carries a rebuilt chart engine and is noticeably faster than earlier packages: drawing, panning and zooming stay smooth on dense sub-minute history, on long sessions kept open, and with several panes streaming at once. It installs as a separate product with its own shortcut, so it can run beside an older installation without touching its license, MetaTrader profiles or position state.
+This is a maintenance build: bugs are fixed and the terminal works faster. It supports MetaTrader 4 next to MetaTrader 5, with the same rules, risk sizing and license checks for both, and carries a rebuilt chart engine that is noticeably faster than earlier packages: drawing, panning and zooming stay smooth on dense sub-minute history, on long sessions kept open, and with several panes streaming at once. It installs as a separate product with its own shortcut, so it can run beside an older installation without touching its license, MetaTrader profiles or position state.
 
 ## Access
 
@@ -80,7 +80,7 @@ The mode is re-checked every ten minutes. If a check cannot be completed, the te
 
 ## Installation
 
-1. Download `TyumexTerminalNextSetup-1.0.112.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
+1. Download `TyumexTerminalNextSetup-1.0.114.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
 2. Run the installer. It installs into `%LOCALAPPDATA%\Programs\Tyumex Terminal Next` and creates a desktop shortcut, isolated from other Tyumex installations.
 3. Start **Tyumex Terminal Next**.
 4. For Binance, Hyperliquid and exchange API charts, pick the source and symbol in the chart header. Nothing else is required.
@@ -126,4 +126,4 @@ Access codes, current builds, activation questions and feedback: [@Tyumex_bot](h
 
 ---
 
-<sub>Keywords: trading terminal, market terminal, multi-chart, Binance, Binance Futures, Hyperliquid, MetaTrader 4, MT4, MetaTrader 5, MT5, CME, MOEX, NQ, XAUUSD, tick charts, second charts, cluster volume, footprint, custom timeframes, bar replay, scalping, technical indicators, risk management, Windows trading software.</sub>
+<sub>Keywords: trading terminal, Windows trading terminal, desktop trading software, multi-chart trading platform, order flow terminal, footprint chart, cluster volume, volume delta, tick charts, second candles, 20s and 30s timeframes, custom timeframes, depth-style price levels, bar replay simulator, scalping software, day trading, intraday trading, position sizing, risk management, stop-loss planner, break-even automation, technical indicators, SMA, EMA, RSI, MACD, Bollinger Bands, chart drawing tools, MetaTrader 4, MT4, MetaTrader 5, MT5, MetaTrader order sending, MT4 expert advisor bridge, Binance, Binance Spot, Binance USD-M Futures, Hyperliquid, crypto trading terminal, forex terminal, futures terminal, CME, COMEX, MOEX, NQ, MNQ, ES, XAUUSD, BTCUSDT, ETHUSDT, index futures, market data, terminal for traders.</sub>
