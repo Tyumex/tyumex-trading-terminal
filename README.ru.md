@@ -2,11 +2,30 @@
 
 Торговый терминал для Windows: анализ рынка на нескольких графиках одновременно. В одном рабочем пространстве живут независимые панели, каждая на своём источнике данных: Binance Spot, Binance USD-M Futures, Hyperliquid, биржевой API для инструментов CME и MOEX, локальные терминалы MetaTrader 4 и MetaTrader 5. Заявки уходят в MetaTrader прямо с графика.
 
+[![Живое демо](https://img.shields.io/badge/%D0%96%D0%B8%D0%B2%D0%BE%D0%B5_%D0%B4%D0%B5%D0%BC%D0%BE-%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8C_%D0%B2_%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D0%B5-2EACBC?style=for-the-badge)](https://demo.tyumextrading.pro/)
+[![Сайт](https://img.shields.io/badge/%D0%A1%D0%B0%D0%B9%D1%82-tyumextrading.pro-1F2937?style=for-the-badge)](https://tyumextrading.pro/)
+[![Скачать](https://img.shields.io/github/v/release/Tyumex/tyumex-trading-terminal?style=for-the-badge&label=%D0%A1%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C&color=1F2937)](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest)
+[![Telegram](https://img.shields.io/badge/Telegram-@Tyumex__bot-229ED9?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/Tyumex_bot)
+
+[![Tyumex Terminal в работе](docs/demo-live.gif)](https://demo.tyumextrading.pro/)
+
+<sub>Это запись публичного демо, а не макет: живые биржевые данные, кластерный объём, зоны и стакан на 300 уровней. Щелчок по картинке открывает тот же терминал в браузере.</sub>
+
+[English version -> README.md](README.md) · Сайт: [tyumextrading.pro](https://tyumextrading.pro/)
+
 В этом репозитории публикуются установщик, скриншоты и инструкция. Исходный код в публичный пакет не входит.
 
-[English version -> README.md](README.md)
+## Посмотреть без установки
 
-![Обзор Tyumex Terminal](docs/terminal-overview.png)
+Публичное демо — та же сборка, что и установщик, работает в браузере, без скачивания и без регистрации:
+
+**[demo.tyumextrading.pro](https://demo.tyumextrading.pro/)** — или откройте [tyumextrading.pro](https://tyumextrading.pro/), там тот же терминал работает прямо на странице.
+
+- Три окна на живых данных: BTCUSDT 1m со стаканом на 300 уровней и кластерным объёмом, XAUUSDT 1m с включённым торговым модулем, NQ@XCME 30s через биржевой API.
+- Зоны и моменты разворота включены, инструменты рисования и индикаторы работают как в продукте, раскладку можно менять.
+- Торговый модуль настоящий: считает лот от риска, ставит стоп и цель на графике. На отправку заявки отвечает «доступно в платной версии» — ни одна заявка не исполняется.
+- В демо закрыты: настройки терминала, источники MetaTrader, симулятор реплея и исполнение заявок. Данные только Binance и биржевой API.
+- Сеанс 20 минут, одновременно 20 посетителей; освободившееся место возвращается через 90 секунд после закрытия вкладки.
 
 ## Скачать
 
@@ -123,6 +142,8 @@ Get-FileHash .\TyumexTerminalNextSetup-1.0.114.exe -Algorithm SHA256
 ## Поддержка
 
 Коды доступа, актуальные сборки, вопросы активации и обратная связь: [@Tyumex_bot](https://t.me/Tyumex_bot).
+
+Сайт продукта, живое демо и кабинет владельца лицензии: [tyumextrading.pro](https://tyumextrading.pro/).
 
 ---
 
