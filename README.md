@@ -2,11 +2,31 @@
 
 Windows desktop trading terminal for multi-chart market analysis. One workspace holds several independent chart panes, each on its own data source: Binance Spot, Binance USD-M Futures, Hyperliquid, an exchange data API for CME and MOEX instruments, and local MetaTrader 4 and MetaTrader 5 terminals. Orders are sent to MetaTrader directly from the chart.
 
+[![Live demo](https://img.shields.io/badge/Live_demo-open_in_browser-2EACBC?style=for-the-badge)](https://demo.tyumextrading.pro/)
+[![Website](https://img.shields.io/badge/Website-tyumextrading.pro-1F2937?style=for-the-badge)](https://tyumextrading.pro/)
+[![Download](https://img.shields.io/github/v/release/Tyumex/tyumex-trading-terminal?style=for-the-badge&label=Download&color=1F2937)](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest)
+[![Telegram](https://img.shields.io/badge/Telegram-@Tyumex__bot-229ED9?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/Tyumex_bot)
+
+[![Tyumex Terminal working live](docs/demo-live.gif)](https://demo.tyumextrading.pro/)
+
+<sub>Recorded in the public demo, not a mockup: live exchange data, cluster volume, zones and a 300-level depth ladder. Click the image to open the same terminal in your browser.</sub>
+
+[Русская версия -> README.ru.md](README.ru.md) · Website: [tyumextrading.pro](https://tyumextrading.pro/)
+
 This repository publishes the installer, screenshots and setup notes. Application sources are not part of the public package.
 
-[Русская версия -> README.ru.md](README.ru.md)
+## Try it live, without installing
 
-![Tyumex Terminal overview](docs/terminal-overview.png)
+The public demo is the same build as the installer, running in your browser with no download and no account:
+
+**[demo.tyumextrading.pro](https://demo.tyumextrading.pro/)** — or open [tyumextrading.pro](https://tyumextrading.pro/), where the same terminal runs inside the page.
+
+- Three panes on live market data: BTCUSDT 1m with a 300-level depth ladder and cluster volume, XAUUSDT 1m with the trading module switched on, and NQ@XCME 30s from the exchange API.
+- Zones and reversal marks are on, drawing tools and indicators work as they do in the product, and the layout can be rearranged.
+- The trading module is real: it sizes the lot from risk and puts the stop and target on the chart. Sending an order answers "available in the paid version" — nothing is ever executed.
+- Not open in the demo: terminal settings, MetaTrader sources, the bar replay simulator and order execution. Data comes from Binance and the exchange API only.
+- A session lasts 20 minutes and 20 visitors are served at a time; a seat comes back 90 seconds after a tab is closed.
+- The demo interface is in Russian.
 
 ## Download
 
@@ -123,6 +143,8 @@ Proprietary commercial software, not open source. The installer published here i
 ## Support
 
 Access codes, current builds, activation questions and feedback: [@Tyumex_bot](https://t.me/Tyumex_bot).
+
+The product site, the live demo and the license owner's cabinet: [tyumextrading.pro](https://tyumextrading.pro/).
 
 ---
 
