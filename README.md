@@ -32,9 +32,9 @@ The public demo is the same build as the installer, running in your browser with
 
 | | |
 |---|---|
-| Version | **1.0.116** |
-| Package | `TyumexTerminalNextSetup-1.0.116.exe` |
-| SHA-256 | `E23587E56934DC770BA59D107A564E84386BB707B23884C717FCD481BE7DA3CD` |
+| Version | **1.0.118** |
+| Package | `TyumexTerminalNextSetup-1.0.118.exe` |
+| SHA-256 | `88E1A86AF57C44119DE6C67C40C348CB36D9E796B9F355825369327FB2EE7B0C` |
 | Platform | Windows 10 / 11, 64-bit |
 
 **[Download the latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest)**
@@ -42,12 +42,12 @@ The public demo is the same build as the installer, running in your browser with
 Verify the download before running it:
 
 ```powershell
-Get-FileHash .\TyumexTerminalNextSetup-1.0.116.exe -Algorithm SHA256
+Get-FileHash .\TyumexTerminalNextSetup-1.0.118.exe -Algorithm SHA256
 ```
 
 The printed hash must match the SHA-256 above. If it does not, do not run the file.
 
-This is a maintenance build: bugs are fixed. It supports MetaTrader 4 next to MetaTrader 5, with the same rules, risk sizing and license checks for both, and carries a rebuilt chart engine that is noticeably faster than earlier packages: drawing, panning and zooming stay smooth on dense sub-minute history, on long sessions kept open, and with several panes streaming at once. It installs as a separate product with its own shortcut, so it can run beside an older installation without touching its license, MetaTrader profiles or position state.
+This build strengthens the daily risk control and adds a trade copier between accounts. The daily loss limit of a live account is now pinned on the server: clearing local files or rolling the computer clock back no longer buys a fresh trading day — stricter limits apply at once, weaker ones wait for the local midnight, and a triggered lock stops new entries only, while closing, Safe mode and break-even keep working. The trade copier mirrors every executed action of a master account onto the chosen follower accounts: the instrument, direction and the master's Stop Loss and Take Profit are kept, and each copy's volume is sized from the follower's own balance and risk percent. MetaTrader 4 is supported next to MetaTrader 5 with the same rules, risk sizing and license checks. The terminal installs as a separate product with its own shortcut, so it can run beside an older installation without touching its license, MetaTrader profiles or position state.
 
 ## Access
 
@@ -83,6 +83,8 @@ Codes are issued for 28 days by the official Telegram bot and are never publishe
 - Stop-loss trade planner: draw the stop on the chart and the volume follows it. The stop itself can come from the extremum of the last three candles, a fixed number of points, or the plan drawn on the chart.
 - Stop Loss and Take Profit set before the order is sent.
 - Break-even shift and Safe Mode guards.
+- Daily risk control: the loss limit for a live account is pinned on the server for the day, so clearing local files or rewinding the clock cannot reset it. A triggered lock stops new entries only; closing, Safe mode and break-even keep working.
+- Trade copier between accounts: every executed action of a master account is mirrored onto the chosen follower accounts. The copy keeps the instrument, direction and the master's Stop Loss and Take Profit, and its volume is sized from the follower's own balance and risk percent.
 - Position and order management from the chart, including partial and full close.
 - Bar replay simulator: replay history bar by bar with exchange-native order sizing and leverage, to rehearse an entry without risking an account.
 
@@ -100,7 +102,7 @@ The mode is re-checked every ten minutes. If a check cannot be completed, the te
 
 ## Installation
 
-1. Download `TyumexTerminalNextSetup-1.0.116.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
+1. Download `TyumexTerminalNextSetup-1.0.118.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
 2. Run the installer. It installs into `%LOCALAPPDATA%\Programs\Tyumex Terminal Next` and creates a desktop shortcut, isolated from other Tyumex installations.
 3. Start **Tyumex Terminal Next**.
 4. For Binance, Hyperliquid and exchange API charts, pick the source and symbol in the chart header. Nothing else is required.
