@@ -32,9 +32,9 @@ The public demo is the same build as the installer, running in your browser with
 
 | | |
 |---|---|
-| Version | **1.0.118** |
-| Package | `TyumexTerminalNextSetup-1.0.118.exe` |
-| SHA-256 | `88E1A86AF57C44119DE6C67C40C348CB36D9E796B9F355825369327FB2EE7B0C` |
+| Version | **1.0.119** |
+| Package | `TyumexTerminalNextSetup-1.0.119.exe` |
+| SHA-256 | `248864F319716B5E7BC85B2232A5E3CA8F6AF51FDEFFE430CDCC26ABA67B1441` |
 | Platform | Windows 10 / 11, 64-bit |
 
 **[Download the latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest)**
@@ -42,12 +42,12 @@ The public demo is the same build as the installer, running in your browser with
 Verify the download before running it:
 
 ```powershell
-Get-FileHash .\TyumexTerminalNextSetup-1.0.118.exe -Algorithm SHA256
+Get-FileHash .\TyumexTerminalNextSetup-1.0.119.exe -Algorithm SHA256
 ```
 
 The printed hash must match the SHA-256 above. If it does not, do not run the file.
 
-This build strengthens the daily risk control and adds a trade copier between accounts. The daily loss limit of a live account is now pinned on the server: clearing local files or rolling the computer clock back no longer buys a fresh trading day — stricter limits apply at once, weaker ones wait for the local midnight, and a triggered lock stops new entries only, while closing, Safe mode and break-even keep working. The trade copier mirrors every executed action of a master account onto the chosen follower accounts: the instrument, direction and the master's Stop Loss and Take Profit are kept, and each copy's volume is sized from the follower's own balance and risk percent. MetaTrader 4 is supported next to MetaTrader 5 with the same rules, risk sizing and license checks. The terminal installs as a separate product with its own shortcut, so it can run beside an older installation without touching its license, MetaTrader profiles or position state.
+This build adds an engulfment indicator with a double-engulfment alert and brings per-account risk limits. The indicator marks the last candle of a same-direction series whose body and extreme are swallowed by one of the nearest opposite candles, drawing a tick from the swallowed extreme to the engulfing bar; when price then breaks that extreme and a second engulfment of the same side follows within the alert window, the terminal raises an alert — and only the latest one sounds. The risk-control panel now carries an account selector, so the daily limits of any enabled MetaTrader slot are set without opening that broker on the chart. A pending order keeps the level you drag it to, clamped only to the nearest valid side of the spread, and the simulator follows the same rule. A copy of a master trade placed on a fixed lot now repeats that exact lot, while a risk-sized master still means the follower sizes the copy from its own risk percent. MetaTrader 4 is supported next to MetaTrader 5 with the same rules, risk sizing and license checks. The terminal installs as a separate product with its own shortcut, so it can run beside an older installation without touching its license, MetaTrader profiles or position state.
 
 ## Access
 
@@ -71,20 +71,20 @@ Codes are issued for 28 days by the official Telegram bot and are never publishe
 - Instrument catalog cached on disk, so symbol search stays usable when the data service is slow.
 
 ### Analysis
-- Built-in SMA, EMA, RSI, MACD and Bollinger Bands.
+- Built-in SMA, EMA, RSI, MACD and Bollinger Bands, plus an engulfment indicator that marks swallowed candles on the chart and alerts on a double engulfment after the extreme breaks.
 - Twelve drawing tools shared across panes: trend line, ray, horizontal and vertical lines, rectangle, ellipse, triangle, arrow, text, measure, plus a selector and an eraser.
 - One-shot mode returns to the cursor after a single drawing; the eraser clears a chart without hunting for individual objects.
 - Drawings are anchored to price and time, so they survive timeframe and symbol switching.
 - Palette color picker for chart and drawing colors.
 
 ### Trading through MetaTrader
-- Market and pending orders, with pendings draggable directly on the chart.
+- Market and pending orders, with pendings draggable directly on the chart; the dragged level is kept, clamped only to the valid side of the spread.
 - Position sizing from a fixed lot, a percentage of the deposit, or a cash amount.
 - Stop-loss trade planner: draw the stop on the chart and the volume follows it. The stop itself can come from the extremum of the last three candles, a fixed number of points, or the plan drawn on the chart.
 - Stop Loss and Take Profit set before the order is sent.
 - Break-even shift and Safe Mode guards.
-- Daily risk control: the loss limit for a live account is pinned on the server for the day, so clearing local files or rewinding the clock cannot reset it. A triggered lock stops new entries only; closing, Safe mode and break-even keep working.
-- Trade copier between accounts: every executed action of a master account is mirrored onto the chosen follower accounts. The copy keeps the instrument, direction and the master's Stop Loss and Take Profit, and its volume is sized from the follower's own balance and risk percent.
+- Daily risk control: the loss limit for a live account is pinned on the server for the day, so clearing local files or rewinding the clock cannot reset it. A triggered lock stops new entries only; closing, Safe mode and break-even keep working. The panel carries an account selector, so the limits of any enabled MetaTrader slot are set without opening that broker on the chart.
+- Trade copier between accounts: every executed action of a master account is mirrored onto the chosen follower accounts. The copy keeps the instrument, direction and the master's Stop Loss and Take Profit, and its volume is sized from the follower's own balance and risk percent; when the master trades a fixed lot, the copy repeats that exact lot.
 - Position and order management from the chart, including partial and full close.
 - Bar replay simulator: replay history bar by bar with exchange-native order sizing and leverage, to rehearse an entry without risking an account.
 
@@ -102,7 +102,7 @@ The mode is re-checked every ten minutes. If a check cannot be completed, the te
 
 ## Installation
 
-1. Download `TyumexTerminalNextSetup-1.0.118.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
+1. Download `TyumexTerminalNextSetup-1.0.119.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
 2. Run the installer. It installs into `%LOCALAPPDATA%\Programs\Tyumex Terminal Next` and creates a desktop shortcut, isolated from other Tyumex installations.
 3. Start **Tyumex Terminal Next**.
 4. For Binance, Hyperliquid and exchange API charts, pick the source and symbol in the chart header. Nothing else is required.
@@ -150,4 +150,4 @@ The product site, the live demo and the license owner's cabinet: [tyumextrading.
 
 ---
 
-<sub>Keywords: trading terminal, Windows trading terminal, desktop trading software, multi-chart trading platform, order flow terminal, footprint chart, cluster volume, volume delta, tick charts, second candles, 20s and 30s timeframes, custom timeframes, depth-style price levels, bar replay simulator, scalping software, day trading, intraday trading, position sizing, risk management, stop-loss planner, break-even automation, technical indicators, SMA, EMA, RSI, MACD, Bollinger Bands, chart drawing tools, MetaTrader 4, MT4, MetaTrader 5, MT5, MetaTrader order sending, MT4 expert advisor bridge, Binance, Binance Spot, Binance USD-M Futures, Hyperliquid, crypto trading terminal, forex terminal, futures terminal, CME, COMEX, MOEX, NQ, MNQ, ES, XAUUSD, BTCUSDT, ETHUSDT, index futures, market data, terminal for traders.</sub>
+<sub>Keywords: trading terminal, Windows trading terminal, desktop trading software, multi-chart trading platform, order flow terminal, footprint chart, cluster volume, volume delta, tick charts, second candles, 20s and 30s timeframes, custom timeframes, depth-style price levels, bar replay simulator, scalping software, day trading, intraday trading, position sizing, risk management, stop-loss planner, break-even automation, technical indicators, SMA, EMA, RSI, MACD, Bollinger Bands, engulfment indicator, engulfing candle, candlestick patterns, chart drawing tools, MetaTrader 4, MT4, MetaTrader 5, MT5, MetaTrader order sending, MT4 expert advisor bridge, Binance, Binance Spot, Binance USD-M Futures, Hyperliquid, crypto trading terminal, forex terminal, futures terminal, CME, COMEX, MOEX, NQ, MNQ, ES, XAUUSD, BTCUSDT, ETHUSDT, index futures, market data, terminal for traders.</sub>
