@@ -32,9 +32,9 @@ The public demo is the same build as the installer, running in your browser with
 
 | | |
 |---|---|
-| Version | **1.0.119** |
-| Package | `TyumexTerminalNextSetup-1.0.119.exe` |
-| SHA-256 | `248864F319716B5E7BC85B2232A5E3CA8F6AF51FDEFFE430CDCC26ABA67B1441` |
+| Version | **1.0.128** |
+| Package | `TyumexTerminalNextSetup-1.0.128.exe` |
+| SHA-256 | `E91FCE149ADDD86671332A9CE97F1EB340D29836F7B51BE9D9B2F784ABB279C8` |
 | Platform | Windows 10 / 11, 64-bit |
 
 **[Download the latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest)**
@@ -42,12 +42,12 @@ The public demo is the same build as the installer, running in your browser with
 Verify the download before running it:
 
 ```powershell
-Get-FileHash .\TyumexTerminalNextSetup-1.0.119.exe -Algorithm SHA256
+Get-FileHash .\TyumexTerminalNextSetup-1.0.128.exe -Algorithm SHA256
 ```
 
 The printed hash must match the SHA-256 above. If it does not, do not run the file.
 
-This build adds an engulfment indicator with a double-engulfment alert and brings per-account risk limits. The indicator marks the last candle of a same-direction series whose body and extreme are swallowed by one of the nearest opposite candles, drawing a tick from the swallowed extreme to the engulfing bar; when price then breaks that extreme and a second engulfment of the same side follows within the alert window, the terminal raises an alert — and only the latest one sounds. The risk-control panel now carries an account selector, so the daily limits of any enabled MetaTrader slot are set without opening that broker on the chart. A pending order keeps the level you drag it to, clamped only to the nearest valid side of the spread, and the simulator follows the same rule. A copy of a master trade placed on a fixed lot now repeats that exact lot, while a risk-sized master still means the follower sizes the copy from its own risk percent. MetaTrader 4 is supported next to MetaTrader 5 with the same rules, risk sizing and license checks. The terminal installs as a separate product with its own shortcut, so it can run beside an older installation without touching its license, MetaTrader profiles or position state.
+This build serves market data through the project's own server and makes the whole terminal faster and steadier. Fourteen futures chains — ES, NQ, GC, CL, NG, Si, USDRUBF among them — stream from the project's own gateway with a compressed tick tape, so seconds-level history reaches months back and loads fast. The chart no longer loops reloads on quiet markets, recovers by itself after a feed hiccup and keeps its zoom while live data refreshes; your feed's tickers stay pinned on top of symbol search, and one click on an alert's label removes just that alert. The MetaTrader deals journal now loads the full history even from a cold-started terminal. MetaTrader 4 is supported next to MetaTrader 5 with the same rules, risk sizing and license checks, and the terminal still installs as a separate product beside an older installation without touching its license, MetaTrader profiles or position state.
 
 ## Access
 
@@ -62,7 +62,7 @@ Codes are issued for 28 days by the official Telegram bot and are never publishe
 ### Charts and data
 - Multiple independent panes in one workspace, each with its own source, symbol and timeframe.
 - Binance Spot, Binance USD-M Futures and Hyperliquid.
-- Exchange API data for CME and MOEX instruments, including index futures such as NQ.
+- Exchange data for CME, COMEX, NYMEX and MOEX instruments — index futures such as NQ, gold, oil and the ruble — served through the project's own market-data server with months of tick history; other symbols keep coming from the exchange data API.
 - Up to four local MetaTrader broker slots, MetaTrader 4 or MetaTrader 5, each pointed at your own installed terminal.
 - Timeframes from 20s and 30s candles built out of ticks through 1m, 3m, 5m, 15m, 30m, 1h, 4h and 1D.
 - Second-level history is filled from minute data on load, so a chart is usable immediately instead of waiting for ticks.
@@ -102,7 +102,7 @@ The mode is re-checked every ten minutes. If a check cannot be completed, the te
 
 ## Installation
 
-1. Download `TyumexTerminalNextSetup-1.0.119.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
+1. Download `TyumexTerminalNextSetup-1.0.128.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
 2. Run the installer. It installs into `%LOCALAPPDATA%\Programs\Tyumex Terminal Next` and creates a desktop shortcut, isolated from other Tyumex installations.
 3. Start **Tyumex Terminal Next**.
 4. For Binance, Hyperliquid and exchange API charts, pick the source and symbol in the chart header. Nothing else is required.
