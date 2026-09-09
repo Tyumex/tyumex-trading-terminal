@@ -32,9 +32,9 @@ The public demo is the same build as the installer, running in your browser with
 
 | | |
 |---|---|
-| Version | **1.0.128** |
-| Package | `TyumexTerminalNextSetup-1.0.128.exe` |
-| SHA-256 | `E91FCE149ADDD86671332A9CE97F1EB340D29836F7B51BE9D9B2F784ABB279C8` |
+| Version | **1.0.135** |
+| Package | `TyumexTerminalNextSetup-1.0.135.exe` |
+| SHA-256 | `7567AB457A18C79A085301BF520F4DD33D8872D109C419EAE275A38BE3FDB8F5` |
 | Platform | Windows 10 / 11, 64-bit |
 
 **[Download the latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest)**
@@ -42,12 +42,12 @@ The public demo is the same build as the installer, running in your browser with
 Verify the download before running it:
 
 ```powershell
-Get-FileHash .\TyumexTerminalNextSetup-1.0.128.exe -Algorithm SHA256
+Get-FileHash .\TyumexTerminalNextSetup-1.0.135.exe -Algorithm SHA256
 ```
 
 The printed hash must match the SHA-256 above. If it does not, do not run the file.
 
-This build serves market data through the project's own server and makes the whole terminal faster and steadier. Fourteen futures chains — ES, NQ, GC, CL, NG, Si, USDRUBF among them — stream from the project's own gateway with a compressed tick tape, so seconds-level history reaches months back and loads fast. The chart no longer loops reloads on quiet markets, recovers by itself after a feed hiccup and keeps its zoom while live data refreshes; your feed's tickers stay pinned on top of symbol search, and one click on an alert's label removes just that alert. The MetaTrader deals journal now loads the full history even from a cold-started terminal. MetaTrader 4 is supported next to MetaTrader 5 with the same rules, risk sizing and license checks, and the terminal still installs as a separate product beside an older installation without touching its license, MetaTrader profiles or position state.
+This build adds nine structural chart types and takes the simulator with them. Renko and Range bricks, Volume, Delta, Tick, Dollar and Reversal bars, plus Kagi and Point & Figure, join time-based candles in the chart-type menu — each mode keeps its own saved parameters and price step, works with or without clusters, and the bar replay simulator supports virtual trades and stepping in every one of them; replay history is now much deeper (50,000 bars on Binance, 200,000 on MetaTrader). Every trade record and its volume belongs to exactly one bar, so clusters carry real exchange volume with no double counting. The deals journal no longer loses MetaTrader 5 deals when the broker's server clock runs ahead, the risk cooldown after stop-outs is measured correctly in every timezone, and session and day levels got a lifetime of their own instead of stretching forever. Event modes need a source that reports trades; price-based modes (Reversal, Kagi, Point & Figure) work on any source. MetaTrader 4 keeps working next to MetaTrader 5, and the terminal still installs as a separate product beside an older installation without touching its license, MetaTrader profiles or position state.
 
 ## Access
 
@@ -65,6 +65,7 @@ Codes are issued for 28 days by the official Telegram bot and are never publishe
 - Exchange data for CME, COMEX, NYMEX and MOEX instruments — index futures such as NQ, gold, oil and the ruble — served through the project's own market-data server with months of tick history; other symbols keep coming from the exchange data API.
 - Up to four local MetaTrader broker slots, MetaTrader 4 or MetaTrader 5, each pointed at your own installed terminal.
 - Timeframes from 20s and 30s candles built out of ticks through 1m, 3m, 5m, 15m, 30m, 1h, 4h and 1D.
+- Structural chart types: Renko and Range bricks, Volume, Delta, Tick, Dollar and Reversal bars, plus Kagi and Point & Figure — each with its own saved parameters and price step, with or without cluster volume.
 - Second-level history is filled from minute data on load, so a chart is usable immediately instead of waiting for ticks.
 - Live streaming candles, session overlays and depth-style price levels.
 - Cluster volume: traded volume per price inside each candle, with its own controls and labels that shrink to fit.
@@ -86,7 +87,7 @@ Codes are issued for 28 days by the official Telegram bot and are never publishe
 - Daily risk control: the loss limit for a live account is pinned on the server for the day, so clearing local files or rewinding the clock cannot reset it. A triggered lock stops new entries only; closing, Safe mode and break-even keep working. The panel carries an account selector, so the limits of any enabled MetaTrader slot are set without opening that broker on the chart.
 - Trade copier between accounts: every executed action of a master account is mirrored onto the chosen follower accounts. The copy keeps the instrument, direction and the master's Stop Loss and Take Profit, and its volume is sized from the follower's own balance and risk percent; when the master trades a fixed lot, the copy repeats that exact lot.
 - Position and order management from the chart, including partial and full close.
-- Bar replay simulator: replay history bar by bar with exchange-native order sizing and leverage, to rehearse an entry without risking an account.
+- Bar replay simulator: replay history bar by bar in every chart type, with exchange-native order sizing and leverage, to rehearse an entry without risking an account.
 
 ![Tyumex Terminal workspace](docs/terminal-workspace.png)
 
@@ -102,7 +103,7 @@ The mode is re-checked every ten minutes. If a check cannot be completed, the te
 
 ## Installation
 
-1. Download `TyumexTerminalNextSetup-1.0.128.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
+1. Download `TyumexTerminalNextSetup-1.0.135.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
 2. Run the installer. It installs into `%LOCALAPPDATA%\Programs\Tyumex Terminal Next` and creates a desktop shortcut, isolated from other Tyumex installations.
 3. Start **Tyumex Terminal Next**.
 4. For Binance, Hyperliquid and exchange API charts, pick the source and symbol in the chart header. Nothing else is required.
@@ -150,4 +151,4 @@ The product site, the live demo and the license owner's cabinet: [tyumextrading.
 
 ---
 
-<sub>Keywords: trading terminal, Windows trading terminal, desktop trading software, multi-chart trading platform, order flow terminal, footprint chart, cluster volume, volume delta, tick charts, second candles, 20s and 30s timeframes, custom timeframes, depth-style price levels, bar replay simulator, scalping software, day trading, intraday trading, position sizing, risk management, stop-loss planner, break-even automation, technical indicators, SMA, EMA, RSI, MACD, Bollinger Bands, engulfment indicator, engulfing candle, candlestick patterns, chart drawing tools, MetaTrader 4, MT4, MetaTrader 5, MT5, MetaTrader order sending, MT4 expert advisor bridge, Binance, Binance Spot, Binance USD-M Futures, Hyperliquid, crypto trading terminal, forex terminal, futures terminal, CME, COMEX, MOEX, NQ, MNQ, ES, XAUUSD, BTCUSDT, ETHUSDT, index futures, market data, terminal for traders.</sub>
+<sub>Keywords: trading terminal, Windows trading terminal, desktop trading software, multi-chart trading platform, order flow terminal, footprint chart, cluster volume, volume delta, tick charts, second candles, 20s and 30s timeframes, custom timeframes, Renko, Range bars, volume bars, delta bars, tick bars, dollar bars, reversal bars, Kagi, Point & Figure, cross and naught charts, depth-style price levels, bar replay simulator, scalping software, day trading, intraday trading, position sizing, risk management, stop-loss planner, break-even automation, technical indicators, SMA, EMA, RSI, MACD, Bollinger Bands, engulfment indicator, engulfing candle, candlestick patterns, chart drawing tools, MetaTrader 4, MT4, MetaTrader 5, MT5, MetaTrader order sending, MT4 expert advisor bridge, Binance, Binance Spot, Binance USD-M Futures, Hyperliquid, crypto trading terminal, forex terminal, futures terminal, CME, COMEX, MOEX, NQ, MNQ, ES, XAUUSD, BTCUSDT, ETHUSDT, index futures, market data, terminal for traders.</sub>
