@@ -1,6 +1,6 @@
-# Tyumex Terminal
+# Tyumex Terminal — Order Flow & Multi-Chart Trading
 
-Windows desktop trading terminal for multi-chart market analysis. One workspace holds several independent chart panes, each on its own data source: Binance Spot, Binance USD-M Futures, Hyperliquid, an exchange data API for CME and MOEX instruments, and local MetaTrader 4 and MetaTrader 5 terminals. Orders are sent to MetaTrader directly from the chart.
+Windows trading terminal for order-flow analysis, footprint charts, bar replay and risk-based order entry. One workspace holds several independent chart panes, each on its own data source: Binance Spot, Binance USD-M Futures, Hyperliquid, an exchange data API for CME and MOEX instruments, and local MetaTrader 4 and MetaTrader 5 terminals. Orders are sent to MetaTrader directly from the chart.
 
 [![Live demo](https://img.shields.io/badge/Live_demo-open_in_browser-2EACBC?style=for-the-badge)](https://demo.tyumextrading.pro/)
 [![Website](https://img.shields.io/badge/Website-tyumextrading.pro-1F2937?style=for-the-badge)](https://tyumextrading.pro/)
@@ -15,9 +15,23 @@ Windows desktop trading terminal for multi-chart market analysis. One workspace 
 
 This repository publishes the installer, screenshots and setup notes. Application sources are not part of the public package.
 
+## From market analysis to a planned trade
+
+| Your task | Tools in one workspace |
+|---|---|
+| Read traded volume at each price | Footprint / cluster charts, delta bars and live market data |
+| Watch several markets together | Independent charts for crypto, futures and MetaTrader instruments |
+| See price structure beyond time candles | Renko, Range, Volume, Delta, Tick, Dollar, Reversal, Kagi and Point & Figure |
+| Practise an entry on history | Bar replay, virtual trades and a jump to a chosen time of day |
+| Plan and manage a MetaTrader trade | Risk-based lot sizing, on-chart stops, partial close and daily limits |
+
+**Start here:** [Try the browser demo](https://demo.tyumextrading.pro/) → [Download Standard for Windows](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) → [Get an access code](https://t.me/Tyumex_bot).
+
+The browser demo is free to try. The Windows product is proprietary and requires an active personal access code for new market data and orders. Data availability depends on the selected provider; MetaTrader trading requires your local broker terminal.
+
 ## Try it live, without installing
 
-The public demo is the same build as the installer, running in your browser with no download and no account:
+Explore the terminal in a public browser demo, with no download and no account. The demo is updated separately from the Windows installer:
 
 **[demo.tyumextrading.pro](https://demo.tyumextrading.pro/)** — or open [tyumextrading.pro](https://tyumextrading.pro/), where the same terminal runs inside the page.
 
@@ -32,9 +46,9 @@ The public demo is the same build as the installer, running in your browser with
 
 | | |
 |---|---|
-| Version | **1.0.135** |
-| Package | `TyumexTerminalNextSetup-1.0.135.exe` |
-| SHA-256 | `7567AB457A18C79A085301BF520F4DD33D8872D109C419EAE275A38BE3FDB8F5` |
+| Version | **1.0.140** |
+| Package | `TyumexTerminalNextSetup-1.0.140.exe` |
+| SHA-256 | `DF7ECD1D0836D5D104AFA8F21B36D1BEBC223D17D81CB86C186C558BAA75EA03` |
 | Platform | Windows 10 / 11, 64-bit |
 
 **[Download the latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest)**
@@ -42,12 +56,22 @@ The public demo is the same build as the installer, running in your browser with
 Verify the download before running it:
 
 ```powershell
-Get-FileHash .\TyumexTerminalNextSetup-1.0.135.exe -Algorithm SHA256
+Get-FileHash .\TyumexTerminalNextSetup-1.0.140.exe -Algorithm SHA256
 ```
 
 The printed hash must match the SHA-256 above. If it does not, do not run the file.
 
-This build adds nine structural chart types and takes the simulator with them. Renko and Range bricks, Volume, Delta, Tick, Dollar and Reversal bars, plus Kagi and Point & Figure, join time-based candles in the chart-type menu — each mode keeps its own saved parameters and price step, works with or without clusters, and the bar replay simulator supports virtual trades and stepping in every one of them; replay history is now much deeper (50,000 bars on Binance, 200,000 on MetaTrader). Every trade record and its volume belongs to exactly one bar, so clusters carry real exchange volume with no double counting. The deals journal no longer loses MetaTrader 5 deals when the broker's server clock runs ahead, the risk cooldown after stop-outs is measured correctly in every timezone, and session and day levels got a lifetime of their own instead of stretching forever. Event modes need a source that reports trades; price-based modes (Reversal, Kagi, Point & Figure) work on any source. MetaTrader 4 keeps working next to MetaTrader 5, and the terminal still installs as a separate product beside an older installation without touching its license, MetaTrader profiles or position state.
+## What's new in Standard 1.0.140
+
+Changes since the previous public release, 1.0.135:
+
+- Alternative charts receive a fresh snapshot and live updates while deeper history loads in the background.
+- Replay supports second-based exchange candles and historical clusters, with future clusters hidden. Jump directly to a chosen time of day.
+- Non-time charts show bar completion percentages and default to 500 history bars unless you choose another value.
+- Trade copying adds follower prechecks and more consistent Safe / break-even handling; broker execution remains sequential.
+- Fixed risk-panel errors caused by broker time offsets. The daily profit lock is confirmed after all account positions close; the loss limit still applies immediately.
+
+The familiar appearance is preserved. Existing server-confirmed daily locks are not automatically removed. [Release notes and checksum](docs/release-1.0.140.md).
 
 ## Access
 
@@ -103,7 +127,7 @@ The mode is re-checked every ten minutes. If a check cannot be completed, the te
 
 ## Installation
 
-1. Download `TyumexTerminalNextSetup-1.0.135.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
+1. Download `TyumexTerminalNextSetup-1.0.140.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
 2. Run the installer. It installs into `%LOCALAPPDATA%\Programs\Tyumex Terminal Next` and creates a desktop shortcut, isolated from other Tyumex installations.
 3. Start **Tyumex Terminal Next**.
 4. For Binance, Hyperliquid and exchange API charts, pick the source and symbol in the chart header. Nothing else is required.
@@ -148,7 +172,3 @@ Proprietary commercial software, not open source. The installer published here i
 Access codes, current builds, activation questions and feedback: [@Tyumex_bot](https://t.me/Tyumex_bot).
 
 The product site, the live demo and the license owner's cabinet: [tyumextrading.pro](https://tyumextrading.pro/).
-
----
-
-<sub>Keywords: trading terminal, Windows trading terminal, desktop trading software, multi-chart trading platform, order flow terminal, footprint chart, cluster volume, volume delta, tick charts, second candles, 20s and 30s timeframes, custom timeframes, Renko, Range bars, volume bars, delta bars, tick bars, dollar bars, reversal bars, Kagi, Point & Figure, cross and naught charts, depth-style price levels, bar replay simulator, scalping software, day trading, intraday trading, position sizing, risk management, stop-loss planner, break-even automation, technical indicators, SMA, EMA, RSI, MACD, Bollinger Bands, engulfment indicator, engulfing candle, candlestick patterns, chart drawing tools, MetaTrader 4, MT4, MetaTrader 5, MT5, MetaTrader order sending, MT4 expert advisor bridge, Binance, Binance Spot, Binance USD-M Futures, Hyperliquid, crypto trading terminal, forex terminal, futures terminal, CME, COMEX, MOEX, NQ, MNQ, ES, XAUUSD, BTCUSDT, ETHUSDT, index futures, market data, terminal for traders.</sub>
