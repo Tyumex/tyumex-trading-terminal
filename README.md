@@ -46,9 +46,9 @@ Explore the terminal in a public browser demo, with no download and no account. 
 
 | | |
 |---|---|
-| Version | **1.0.144** |
-| Package | `TyumexTerminalNextSetup-1.0.144.exe` |
-| SHA-256 | `FE57E8CDDFBE9A51F0B4084AC5DFE0D3CC69D386D378ABE2C99A1D548D2F83E8` |
+| Version | **1.0.145** |
+| Package | `TyumexTerminalNextSetup-1.0.145.exe` |
+| SHA-256 | `632140281D81832D31DD472BCB3B4B2C001E05971DA75A3CAB1A522D6DEF5768` |
 | Platform | Windows 10 / 11, 64-bit |
 
 **[Download the latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest)**
@@ -56,20 +56,14 @@ Explore the terminal in a public browser demo, with no download and no account. 
 Verify the download before running it:
 
 ```powershell
-Get-FileHash .\TyumexTerminalNextSetup-1.0.144.exe -Algorithm SHA256
+Get-FileHash .\TyumexTerminalNextSetup-1.0.145.exe -Algorithm SHA256
 ```
 
 The printed hash must match the SHA-256 above. If it does not, do not run the file.
 
-## What's new in Standard 1.0.144
+## What's new in Standard 1.0.145
 
-Changes since the previous public release, 1.0.140:
-
-- Replay starts from a chosen calendar date and pulls the maximum history the source allows — up to 200,000 bars on MetaTrader and the futures feed. Loaded amount and date range are shown in the replay settings.
-- The settings window got a section menu and a scrollable settings area.
-- The license panel is now a round logo button with a clearer connection check, and the deals journal remembers its selected period.
-
-The familiar appearance is preserved. [Release notes and checksum](docs/release-1.0.144.md).
+A maintenance build over 1.0.144: the replay simulator now starts by bar count or date — whichever you fill — keeps 500 bars of context before the start and caches loaded history locally, so a repeated start is instant. The engulfment indicator is rebuilt, with its own bull and bear colors and filters. The familiar appearance is preserved. [Release notes and checksum](docs/release-1.0.145.md).
 
 ## Access
 
@@ -125,7 +119,7 @@ The mode is re-checked every ten minutes. If a check cannot be completed, the te
 
 ## Installation
 
-1. Download `TyumexTerminalNextSetup-1.0.144.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
+1. Download `TyumexTerminalNextSetup-1.0.145.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
 2. Run the installer. It installs into `%LOCALAPPDATA%\Programs\Tyumex Terminal Next` and creates a desktop shortcut, isolated from other Tyumex installations.
 3. Start **Tyumex Terminal Next**.
 4. For Binance, Hyperliquid and exchange API charts, pick the source and symbol in the chart header. Nothing else is required.
