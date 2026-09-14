@@ -46,9 +46,9 @@ Explore the terminal in a public browser demo, with no download and no account. 
 
 | | |
 |---|---|
-| Version | **1.0.145** |
-| Package | `TyumexTerminalNextSetup-1.0.145.exe` |
-| SHA-256 | `632140281D81832D31DD472BCB3B4B2C001E05971DA75A3CAB1A522D6DEF5768` |
+| Version | **1.0.146** |
+| Package | `TyumexTerminalNextSetup-1.0.146.exe` |
+| SHA-256 | `86148F5BE7F980B0FEC7F4BFAE4D72E212CADDB02A34C8384611F42292FD6EF6` |
 | Platform | Windows 10 / 11, 64-bit |
 
 **[Download the latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest)**
@@ -56,14 +56,14 @@ Explore the terminal in a public browser demo, with no download and no account. 
 Verify the download before running it:
 
 ```powershell
-Get-FileHash .\TyumexTerminalNextSetup-1.0.145.exe -Algorithm SHA256
+Get-FileHash .\TyumexTerminalNextSetup-1.0.146.exe -Algorithm SHA256
 ```
 
 The printed hash must match the SHA-256 above. If it does not, do not run the file.
 
-## What's new in Standard 1.0.145
+## What's new in Standard 1.0.146
 
-A maintenance build over 1.0.144: the replay simulator now starts by bar count or date — whichever you fill — keeps 500 bars of context before the start and caches loaded history locally, so a repeated start is instant. The engulfment indicator is rebuilt, with its own bull and bear colors and filters. The familiar appearance is preserved. [Release notes and checksum](docs/release-1.0.145.md).
+Automatic trade screenshots: the terminal captures the whole workspace — every chart — when a position opens, when price comes within a set distance of the Stop Loss or Take Profit, and when the position closes. Shots land in a folder you choose, grouped by instrument and date, ready for your journal. Everything is off until you enable it in settings. [Release notes and checksum](docs/release-1.0.146.md).
 
 ## Access
 
@@ -103,6 +103,7 @@ Codes are issued for 28 days by the official Telegram bot and are never publishe
 - Daily risk control: the loss limit for a live account is pinned on the server for the day, so clearing local files or rewinding the clock cannot reset it. A triggered lock stops new entries only; closing, Safe mode and break-even keep working. The panel carries an account selector, so the limits of any enabled MetaTrader slot are set without opening that broker on the chart.
 - Trade copier between accounts: every executed action of a master account is mirrored onto the chosen follower accounts. The copy keeps the instrument, direction and the master's Stop Loss and Take Profit, and its volume is sized from the follower's own balance and risk percent; when the master trades a fixed lot, the copy repeats that exact lot.
 - Position and order management from the chart, including partial and full close.
+- Automatic trade screenshots: the whole workspace is captured on position opening, on approach to the Stop Loss or Take Profit, and on closing — saved to your folder, grouped by instrument and date.
 - Bar replay simulator: replay history bar by bar in every chart type, with exchange-native order sizing and leverage, to rehearse an entry without risking an account.
 
 ![Tyumex Terminal workspace](docs/terminal-workspace.png)
@@ -119,7 +120,7 @@ The mode is re-checked every ten minutes. If a check cannot be completed, the te
 
 ## Installation
 
-1. Download `TyumexTerminalNextSetup-1.0.145.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
+1. Download `TyumexTerminalNextSetup-1.0.146.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
 2. Run the installer. It installs into `%LOCALAPPDATA%\Programs\Tyumex Terminal Next` and creates a desktop shortcut, isolated from other Tyumex installations.
 3. Start **Tyumex Terminal Next**.
 4. For Binance, Hyperliquid and exchange API charts, pick the source and symbol in the chart header. Nothing else is required.
