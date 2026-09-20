@@ -35,7 +35,7 @@ Explore the terminal in a public browser demo, with no download and no account. 
 
 **[demo.tyumextrading.pro](https://demo.tyumextrading.pro/)** — or open [tyumextrading.pro](https://tyumextrading.pro/), where the same terminal runs inside the page.
 
-- Three panes on live market data: BTCUSDT 1m with a 300-level depth ladder and cluster volume, XAUUSDT 1m with the trading module switched on, and NQ@XCME 30s from the exchange API.
+- Three panes on live market data: BTCUSDT 1m with a 300-level depth ladder and cluster volume, GC@XCEC 1m with the trading module switched on, and NQ@XCME 30s from the exchange API. Bitcoin candle history is served from the durable Latvia archive; live trades and depth come from Binance Futures.
 - Zones and reversal marks are on, drawing tools and indicators work as they do in the product, and the layout can be rearranged.
 - The trading module is real: it sizes the lot from risk and puts the stop and target on the chart. Sending an order answers "available in the paid version" — nothing is ever executed.
 - Not open in the demo: terminal settings, MetaTrader sources, the bar replay simulator and order execution. Data comes from Binance and the exchange API only.
@@ -46,9 +46,9 @@ Explore the terminal in a public browser demo, with no download and no account. 
 
 | | |
 |---|---|
-| Version | **1.0.146** |
-| Package | `TyumexTerminalNextSetup-1.0.146.exe` |
-| SHA-256 | `86148F5BE7F980B0FEC7F4BFAE4D72E212CADDB02A34C8384611F42292FD6EF6` |
+| Version | **1.0.154** |
+| Package | `TyumexTerminalNextSetup-1.0.154.exe` |
+| SHA-256 | `EFD846341B126A14DBFF4ECCAB370F4E8C8CD2E4B2ABFC87912B29EA6860BD80` |
 | Platform | Windows 10 / 11, 64-bit |
 
 **[Download the latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest)**
@@ -56,14 +56,14 @@ Explore the terminal in a public browser demo, with no download and no account. 
 Verify the download before running it:
 
 ```powershell
-Get-FileHash .\TyumexTerminalNextSetup-1.0.146.exe -Algorithm SHA256
+Get-FileHash .\TyumexTerminalNextSetup-1.0.154.exe -Algorithm SHA256
 ```
 
 The printed hash must match the SHA-256 above. If it does not, do not run the file.
 
-## What's new in Standard 1.0.146
+## What's new in Standard 1.0.154
 
-Automatic trade screenshots: the terminal captures the whole workspace — every chart — when a position opens, when price comes within a set distance of the Stop Loss or Take Profit, and when the position closes. Shots land in a folder you choose, grouped by instrument and date, ready for your journal. Everything is off until you enable it in settings. [Release notes and checksum](docs/release-1.0.146.md).
+BTCUSDT, XAUUSDT and QQQUSDT now use durable candle and trade history from the Latvia service. Range, Delta, Reversal and the other event-driven charts load progressively from real trades, while missing trades are never invented from candle paths. This release also includes direct Binance and Bybit second candles, safer risk sizing and automatic Safe handling for supported USDT futures. [Release notes and checksum](docs/release-1.0.154.md).
 
 ## Access
 
@@ -120,7 +120,7 @@ The mode is re-checked every ten minutes. If a check cannot be completed, the te
 
 ## Installation
 
-1. Download `TyumexTerminalNextSetup-1.0.146.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
+1. Download `TyumexTerminalNextSetup-1.0.154.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
 2. Run the installer. It installs into `%LOCALAPPDATA%\Programs\Tyumex Terminal Next` and creates a desktop shortcut, isolated from other Tyumex installations.
 3. Start **Tyumex Terminal Next**.
 4. For Binance, Hyperliquid and exchange API charts, pick the source and symbol in the chart header. Nothing else is required.
