@@ -1,6 +1,6 @@
-# Tyumex Terminal — Order Flow & Multi-Chart Trading
+# Tyumex Terminal
 
-Windows trading terminal for order-flow analysis, footprint charts, bar replay and risk-based order entry. One workspace holds several independent chart panes, each on its own data source: Binance Spot, Binance USD-M Futures, Hyperliquid, an exchange data API for CME and MOEX instruments, and local MetaTrader 4 and MetaTrader 5 terminals. Orders are sent to MetaTrader directly from the chart.
+Windows desktop trading terminal for multi-chart market analysis. One workspace holds several independent chart panes, each on its own data source: Binance Spot, Binance USD-M Futures, Hyperliquid, an exchange data API for CME and MOEX instruments, and local MetaTrader 4 and MetaTrader 5 terminals. Orders go to MetaTrader or Bybit directly from the chart.
 
 [![Live demo](https://img.shields.io/badge/Live_demo-open_in_browser-2EACBC?style=for-the-badge)](https://demo.tyumextrading.pro/)
 [![Website](https://img.shields.io/badge/Website-tyumextrading.pro-1F2937?style=for-the-badge)](https://tyumextrading.pro/)
@@ -15,27 +15,13 @@ Windows trading terminal for order-flow analysis, footprint charts, bar replay a
 
 This repository publishes the installer, screenshots and setup notes. Application sources are not part of the public package.
 
-## From market analysis to a planned trade
-
-| Your task | Tools in one workspace |
-|---|---|
-| Read traded volume at each price | Footprint / cluster charts, delta bars and live market data |
-| Watch several markets together | Independent charts for crypto, futures and MetaTrader instruments |
-| See price structure beyond time candles | Renko, Range, Volume, Delta, Tick, Dollar, Reversal, Kagi and Point & Figure |
-| Practise an entry on history | Bar replay, virtual trades and a jump to a chosen time of day |
-| Plan and manage a MetaTrader trade | Risk-based lot sizing, on-chart stops, partial close and daily limits |
-
-**Start here:** [Try the browser demo](https://demo.tyumextrading.pro/) → [Download Standard for Windows](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) → [Get an access code](https://t.me/Tyumex_bot).
-
-The browser demo is free to try. The Windows product is proprietary and requires an active personal access code for new market data and orders. Data availability depends on the selected provider; MetaTrader trading requires your local broker terminal.
-
 ## Try it live, without installing
 
-Explore the terminal in a public browser demo, with no download and no account. The demo is updated separately from the Windows installer:
+The public demo is the same build as the installer, running in your browser with no download and no account:
 
 **[demo.tyumextrading.pro](https://demo.tyumextrading.pro/)** — or open [tyumextrading.pro](https://tyumextrading.pro/), where the same terminal runs inside the page.
 
-- Three panes on live market data: BTCUSDT 1m with a 300-level depth ladder and cluster volume, GC@XCEC 1m with the trading module switched on, and NQ@XCME 30s from the exchange API. Bitcoin candle history is served from the durable Latvia archive; live trades and depth come from Binance Futures.
+- Three panes on live market data: BTCUSDT 1m with a 300-level depth ladder and cluster volume, XAUUSDT 1m with the trading module switched on, and NQ@XCME 30s from the exchange API.
 - Zones and reversal marks are on, drawing tools and indicators work as they do in the product, and the layout can be rearranged.
 - The trading module is real: it sizes the lot from risk and puts the stop and target on the chart. Sending an order answers "available in the paid version" — nothing is ever executed.
 - Not open in the demo: terminal settings, MetaTrader sources, the bar replay simulator and order execution. Data comes from Binance and the exchange API only.
@@ -46,9 +32,9 @@ Explore the terminal in a public browser demo, with no download and no account. 
 
 | | |
 |---|---|
-| Version | **1.0.154** |
-| Package | `TyumexTerminalNextSetup-1.0.154.exe` |
-| SHA-256 | `EFD846341B126A14DBFF4ECCAB370F4E8C8CD2E4B2ABFC87912B29EA6860BD80` |
+| Version | **1.0.158** |
+| Package | `TyumexTerminalNextSetup-1.0.158.exe` |
+| SHA-256 | `0D654E4232BF264AF51CC5A4D80AAE55136CC5EE8232AE2F9BCA07A001D8C69D` |
 | Platform | Windows 10 / 11, 64-bit |
 
 **[Download the latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest)**
@@ -56,14 +42,12 @@ Explore the terminal in a public browser demo, with no download and no account. 
 Verify the download before running it:
 
 ```powershell
-Get-FileHash .\TyumexTerminalNextSetup-1.0.154.exe -Algorithm SHA256
+Get-FileHash .\TyumexTerminalNextSetup-1.0.158.exe -Algorithm SHA256
 ```
 
 The printed hash must match the SHA-256 above. If it does not, do not run the file.
 
-## What's new in Standard 1.0.154
-
-BTCUSDT, XAUUSDT and QQQUSDT now use durable candle and trade history from the Latvia service. Range, Delta, Reversal and the other event-driven charts load progressively from real trades, while missing trades are never invented from candle paths. This release also includes direct Binance and Bybit second candles, safer risk sizing and automatic Safe handling for supported USDT futures. [Release notes and checksum](docs/release-1.0.154.md).
+This build brings real Bybit trading, uniform stops and a real tick archive for Just2Trade. Bybit Spot and USDT Perpetual take orders from the chart; the API key is protected by Windows DPAPI and cannot withdraw funds. The three-bar stop and the candle-extreme stop behave identically on MT5, Finam, crypto and the simulator. Paired MT5 entries check both accounts before dispatch and warn on partial execution; Safe for copied positions splits volume into two valid lots and retries after a rejection. Just2Trade FUTGOLDCONT and FUTNASDAQCONT load real second candles from a tick archive back to July 2023.
 
 ## Access
 
@@ -78,33 +62,32 @@ Codes are issued for 28 days by the official Telegram bot and are never publishe
 ### Charts and data
 - Multiple independent panes in one workspace, each with its own source, symbol and timeframe.
 - Binance Spot, Binance USD-M Futures and Hyperliquid.
-- Exchange data for CME, COMEX, NYMEX and MOEX instruments — index futures such as NQ, gold, oil and the ruble — served through the project's own market-data server with months of tick history; other symbols keep coming from the exchange data API.
+- Exchange API data for CME and MOEX instruments, including index futures such as NQ.
 - Up to four local MetaTrader broker slots, MetaTrader 4 or MetaTrader 5, each pointed at your own installed terminal.
 - Timeframes from 20s and 30s candles built out of ticks through 1m, 3m, 5m, 15m, 30m, 1h, 4h and 1D.
-- Structural chart types: Renko and Range bricks, Volume, Delta, Tick, Dollar and Reversal bars, plus Kagi and Point & Figure — each with its own saved parameters and price step, with or without cluster volume.
 - Second-level history is filled from minute data on load, so a chart is usable immediately instead of waiting for ticks.
 - Live streaming candles, session overlays and depth-style price levels.
 - Cluster volume: traded volume per price inside each candle, with its own controls and labels that shrink to fit.
 - Instrument catalog cached on disk, so symbol search stays usable when the data service is slow.
 
 ### Analysis
-- Built-in SMA, EMA, RSI, MACD and Bollinger Bands, plus an engulfment indicator that marks swallowed candles on the chart and alerts on a double engulfment after the extreme breaks.
+- Built-in SMA, EMA, RSI, MACD and Bollinger Bands.
 - Twelve drawing tools shared across panes: trend line, ray, horizontal and vertical lines, rectangle, ellipse, triangle, arrow, text, measure, plus a selector and an eraser.
 - One-shot mode returns to the cursor after a single drawing; the eraser clears a chart without hunting for individual objects.
 - Drawings are anchored to price and time, so they survive timeframe and symbol switching.
 - Palette color picker for chart and drawing colors.
 
-### Trading through MetaTrader
-- Market and pending orders, with pendings draggable directly on the chart; the dragged level is kept, clamped only to the valid side of the spread.
+### Trading through MetaTrader and Bybit
+- Bybit Spot (without borrowing) and Bybit USDT Perpetual trade with real orders from the chart; the API key is protected by Windows DPAPI and cannot withdraw funds.
+- Market and pending orders, with pendings draggable directly on the chart.
 - Position sizing from a fixed lot, a percentage of the deposit, or a cash amount.
 - Stop-loss trade planner: draw the stop on the chart and the volume follows it. The stop itself can come from the extremum of the last three candles, a fixed number of points, or the plan drawn on the chart.
 - Stop Loss and Take Profit set before the order is sent.
 - Break-even shift and Safe Mode guards.
-- Daily risk control: the loss limit for a live account is pinned on the server for the day, so clearing local files or rewinding the clock cannot reset it. A triggered lock stops new entries only; closing, Safe mode and break-even keep working. The panel carries an account selector, so the limits of any enabled MetaTrader slot are set without opening that broker on the chart.
-- Trade copier between accounts: every executed action of a master account is mirrored onto the chosen follower accounts. The copy keeps the instrument, direction and the master's Stop Loss and Take Profit, and its volume is sized from the follower's own balance and risk percent; when the master trades a fixed lot, the copy repeats that exact lot.
+- Daily risk control: the loss limit for a live account is pinned on the server for the day, so clearing local files or rewinding the clock cannot reset it. A triggered lock stops new entries only; closing, Safe mode and break-even keep working.
+- Trade copier between accounts: every executed action of a master account is mirrored onto the chosen follower accounts. The copy keeps the instrument, direction and the master's Stop Loss and Take Profit, and its volume is sized from the follower's own balance and risk percent.
 - Position and order management from the chart, including partial and full close.
-- Automatic trade screenshots: the whole workspace is captured on position opening, on approach to the Stop Loss or Take Profit, and on closing — saved to your folder, grouped by instrument and date.
-- Bar replay simulator: replay history bar by bar in every chart type, with exchange-native order sizing and leverage, to rehearse an entry without risking an account.
+- Bar replay simulator: replay history bar by bar with exchange-native order sizing and leverage, to rehearse an entry without risking an account.
 
 ![Tyumex Terminal workspace](docs/terminal-workspace.png)
 
@@ -120,7 +103,7 @@ The mode is re-checked every ten minutes. If a check cannot be completed, the te
 
 ## Installation
 
-1. Download `TyumexTerminalNextSetup-1.0.154.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
+1. Download `TyumexTerminalNextSetup-1.0.158.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
 2. Run the installer. It installs into `%LOCALAPPDATA%\Programs\Tyumex Terminal Next` and creates a desktop shortcut, isolated from other Tyumex installations.
 3. Start **Tyumex Terminal Next**.
 4. For Binance, Hyperliquid and exchange API charts, pick the source and symbol in the chart header. Nothing else is required.
@@ -165,3 +148,7 @@ Proprietary commercial software, not open source. The installer published here i
 Access codes, current builds, activation questions and feedback: [@Tyumex_bot](https://t.me/Tyumex_bot).
 
 The product site, the live demo and the license owner's cabinet: [tyumextrading.pro](https://tyumextrading.pro/).
+
+---
+
+<sub>Keywords: trading terminal, Windows trading terminal, desktop trading software, multi-chart trading platform, order flow terminal, footprint chart, cluster volume, volume delta, tick charts, second candles, 20s and 30s timeframes, custom timeframes, depth-style price levels, bar replay simulator, scalping software, day trading, intraday trading, position sizing, risk management, stop-loss planner, break-even automation, technical indicators, SMA, EMA, RSI, MACD, Bollinger Bands, chart drawing tools, MetaTrader 4, MT4, MetaTrader 5, MT5, MetaTrader order sending, MT4 expert advisor bridge, Binance, Binance Spot, Binance USD-M Futures, Hyperliquid, crypto trading terminal, forex terminal, futures terminal, CME, COMEX, MOEX, NQ, MNQ, ES, XAUUSD, BTCUSDT, ETHUSDT, index futures, market data, terminal for traders.</sub>
