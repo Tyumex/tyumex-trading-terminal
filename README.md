@@ -32,9 +32,9 @@ Explore the terminal in your browser without downloading or creating an account.
 
 | | |
 |---|---|
-| Version | **1.0.175** |
-| Package | `TyumexTerminalNextSetup-1.0.175.exe` |
-| SHA-256 | `E51B530E72DEE57F932238F0818BDFB9C6237BABCA21982A9711D325274B71AC` |
+| Version | **1.0.205** |
+| Package | `TyumexTerminalNextSetup-1.0.205.exe` |
+| SHA-256 | `CEC66FDF79B338E582048798EDCEF9E0B67618E592ABE12AA6D4D4EF799BAAC0` |
 | Platform | Windows 10 / 11, 64-bit |
 
 **[Download the latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest)**
@@ -42,12 +42,16 @@ Explore the terminal in your browser without downloading or creating an account.
 Verify the download before running it:
 
 ```powershell
-Get-FileHash .\TyumexTerminalNextSetup-1.0.175.exe -Algorithm SHA256
+Get-FileHash .\TyumexTerminalNextSetup-1.0.205.exe -Algorithm SHA256
 ```
 
 The printed hash must match the SHA-256 above. If it does not, do not run the file.
 
-Price, time and volume in one workspace: experimental Renko/Range modes and adaptive Renko combine market structure with cluster analysis. Volume signals and a POC/VAH/VAL profile add context; optional reversal alerts help monitor completed bars. Deep history loads in the background while live trades continue, and MT5 history handles cold synchronization more reliably. Training replay improves risk sizing and result calculations. [Release notes and checksum](docs/release-1.0.175.md).
+## Robot EE
+
+Open **Indicators → Robot EE** to see potential buy and sell entries on closed candles. Choose all signals or one virtual position at a time, and enable sound alerts for new signals if needed. You decide whether to enter a trade.
+
+The video walks through the Nasdaq trades I used to refine Robot EE with AI and shows how I check the signals on historical data. The trade handoff to the AI agent is shown in the Author edition. [Watch on YouTube (in Russian)](https://youtu.be/gAj_rxBEuRc)
 
 ## Access
 
@@ -103,7 +107,7 @@ The mode is re-checked every ten minutes. If a check cannot be completed, the te
 
 ## Installation
 
-1. Download `TyumexTerminalNextSetup-1.0.175.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
+1. Download `TyumexTerminalNextSetup-1.0.205.exe` from the [latest release](https://github.com/Tyumex/tyumex-trading-terminal/releases/latest) and check its SHA-256.
 2. Run the installer. It installs into `%LOCALAPPDATA%\Programs\Tyumex Terminal Next` and creates a desktop shortcut, isolated from other Tyumex installations.
 3. Start **Tyumex Terminal Next**.
 4. For Binance, Hyperliquid and exchange API charts, pick the source and symbol in the chart header. Nothing else is required.
